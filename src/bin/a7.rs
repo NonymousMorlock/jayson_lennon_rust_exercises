@@ -10,4 +10,24 @@
 // * Use a match expression to determine which color
 //   name to print
 
-fn main() {}
+enum Colour {
+    Red,
+    Green,
+    Blue,
+    Yellow,
+}
+
+fn fill(colour: Colour) {
+    let colour_name = match colour {
+        Colour::Red => "red",
+        Colour::Green => "green",
+        Colour::Blue => "blue",
+        Colour::Yellow => "yellow",
+    };
+    println!("Filled with {:?}", colour_name);
+}
+
+fn main() {
+    let prop_colour = Colour::Blue;
+    fill(prop_colour);
+}
