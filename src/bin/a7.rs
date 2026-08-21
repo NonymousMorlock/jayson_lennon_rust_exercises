@@ -24,7 +24,7 @@ fn fill(colour: Colour) {
         Colour::Blue => "blue",
         Colour::Yellow => "yellow",
     };
-    println!("Filled with {:?}", colour_name);
+    println!("Filled with {colour_name}");
 }
 
 fn main() {
