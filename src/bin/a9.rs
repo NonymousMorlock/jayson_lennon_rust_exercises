@@ -14,7 +14,7 @@ fn coordinates() -> (f64, f64) {
 }
 
 fn main() {
-    let (x, y) = coordinates();
+    let (_, y) = coordinates();
     if y == 5.0 {
         println!("equal to 5");
     } else if y < 5.0 {
