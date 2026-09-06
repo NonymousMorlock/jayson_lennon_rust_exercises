@@ -12,4 +12,12 @@
 //   to uppercase and lowercase
 //   * Try searching for: to_uppercase, to_lowercase
 
-fn main() {}
+fn main() {
+    let string_slice = "cRaTe";
+    println!("{}", string_slice.to_uppercase());
+    println!("{}", string_slice.to_lowercase());
+
+    let owned_string = String::from("LYriCAl");
+    println!("{}", owned_string.to_uppercase());
+    println!("{}", owned_string.to_lowercase());
+}
