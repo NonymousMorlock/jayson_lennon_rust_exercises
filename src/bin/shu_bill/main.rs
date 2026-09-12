@@ -18,4 +18,21 @@
 // * Create your program starting at level 1. Once finished, advance to the
 //   next level.
 
-fn main() {}
+use crate::cli::{CLIService, HomeParams};
+use crate::utils::db_utils::DBUtils;
+
+pub mod cli;
+pub mod models;
+pub mod utils;
+
+fn main() {
+    let home_params = HomeParams {
+        database_write: DBUtils::write,
+        database_read: DBUtils::read_all,
+        database_delete: DBUtils::delete,
+        database_patch: DBUtils::patch,
+        database_read_one: DBUtils::read
+    };
+
+    CLIService::home(home_params);
+}
