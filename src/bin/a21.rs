@@ -8,6 +8,8 @@
 // * Use the map function to create the User
 // * Print out the User struct if found, or a "not found" message if not
 
+use std::io;
+
 #[derive(Debug)]
 struct User {
     user_id: i32,
@@ -25,4 +27,25 @@ fn find_user(name: &str) -> Option<i32> {
     }
 }
 
-fn main() {}
+fn main() {
+    let mut buffer: String = String::new();
+
+    println!("Enter username:");
+
+    io::stdin()
+        .read_line(&mut buffer)
+        .expect("Something went wrong");
+
+    let username: &str = buffer.trim();
+
+    let user: Option<User> = find_user(username).map(|user_id| User {
+        user_id,
+        name: username.to_owned(),
+    });
+
+    if let Some(user) = user {
+        println!("{:?}", user);
+    } else {
+        println!("not found");
+    }
+}
